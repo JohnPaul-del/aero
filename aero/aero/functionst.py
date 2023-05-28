@@ -5,6 +5,11 @@ import pickle
 import numpy as np
 import pandas as pd
 from sklearn.preprocessing import LabelEncoder
+from joblib import load
+
+
+rb_map = {'P': 0, 'K': 1, 'H': 2, 'L': 3, 'X': 4, 'Q': 5, 'T': 6, 'E': 7, 'N': 8, 'R': 9, 'G': 10, 'V': 11,
+           'J': 12, 'C': 13, 'D': 14, 'I': 15, 'Z': 16, 'O': 17, 'Y': 18, 'B': 19, 'M': 20, 'U': 21}
 
 
 def get_dataset(start_date, end_date, path='aero/datasets/'):
@@ -177,7 +182,7 @@ def show_graph_task3(dep_air,
     return df_pf, n_names
 
 
-def get_schedule_df(path_df='aero/datasets/'):
+def get_schedule_df(path_df='aero/datasets/dataset_19_to_model.csv'):
     """
     функция загружает датасет по расписанию.
     :return: датафрейм с расписанием
@@ -224,7 +229,7 @@ def get_history_df(year):
     return dataset_to_model
 
 
-def get_pickle_df(start_data, end_data, path='aero/datasets'):
+def get_pickle_df(start_data, end_data, d_path='aero/datasets/'):
     """
     Данные считывает из piсkle файлов: быстрее чем CSV на 30-50%
 
@@ -232,8 +237,6 @@ def get_pickle_df(start_data, end_data, path='aero/datasets'):
     :param end_data:
     :return: возвращает датафрейм в формате Pandas
     """
-
-    path_pickle = path + '/PICKLE' # путь к папке c файлами CLASS в формате PICKLE
 
     year_s = start_data.year
     year_e = end_data.year
@@ -247,7 +250,7 @@ def get_pickle_df(start_data, end_data, path='aero/datasets'):
         else:
             month_end = 12
         for month in range(month_s, month_end + 1):
-            all_files.append(os.path.join(path_pickle, "CLASS_{:02d}{:04d}.pickle".format(month, year)))
+            all_files.append(os.path.join(d_path, "CLASS_{:02d}{:04d}.pickle".format(month, year)))
 
         month_s = 1
 
@@ -449,5 +452,55 @@ def get_predicted_dataset():
     return df
 
 
+def get_predict(X, rbd_map):
+    """
+       функция возвращает датасет с предсказанием
+       :param X: данные для предсказания
+       :param rbd_map: словарь классов для обработного преобразования из предиктовых данных
+       :return: датафрейм с данными для дальнешей раблоты с графиками.
+       """
+
+    model = load('aero/datasets/LinearRegression_18.joblib')
+
+    y_pred = np.round(model.predict(X))
+    X['Y_PRED_MODELMLG'] = y_pred
+
+    reverse_rbd_map = {v: k for k, v in rbd_map.items()}
+    X['SEG_CLASS_CODE'] = X['SEG_CLASS_CODE_CAT'].map(reverse_rbd_map)
+    X['DD'] = pd.to_datetime('2020') + pd.to_timedelta(X['DAY_NBR_YEAR'] - 1, unit='D')
+    X = X.drop(['SEG_CLASS_CODE_CAT', 'DAY_NBR_YEAR'], axis=1)
+    return X
 
 
+def get_seasons(dd, n_data_end, n_names):
+
+    d_end = n_data_end[np.where(n_data_end >= np.datetime64(dd))].min()
+    try:
+        name_s = n_names[np.where(n_data_end == d_end)][0]
+    except:
+        name_s = ''
+    return name_s
+
+
+def show_graph_task4(dep_air,
+                     arr_air,
+
+                     seas_path='aero/datasets/seasonality.csv',
+                     rbd_map=rb_map):
+    df_ses = pd.read_csv(seas_path, sep=',')
+    df_ses['DAT_BEGIN'] = pd.to_datetime(df_ses['DAT_BEGIN'], format='%d.%m.%Y')
+    df_ses['DAT_END'] = pd.to_datetime(df_ses['DAT_END'], format='%d.%m.%Y')
+
+    df_ses = df_ses[(df_ses['AEROPORT'].isin([dep_air, arr_air]))].copy()
+    X = get_predicted_dataset()
+    X = X.loc[:, X.columns != 'PASS_BK']
+
+    np_str = df_ses['DAT_BEGIN'].to_numpy()
+    np_end = df_ses['DAT_END'].to_numpy()
+    n_names = df_ses['NAME_S'].to_numpy()
+    pred_data = get_predict(X, rbd_map)
+    pred_data['seas'] = pred_data['DD'].apply(func=get_seasons, args=(np_end, n_names))
+    df_for_seas = pred_data.groupby(['DD', 'seas']).agg({'Y_PRED_MODELMLG': ['sum']}).reset_index()
+    df_for_class = pred_data.groupby(['DD', 'SEG_CLASS_CODE']).agg({'Y_PRED_MODELMLG': ['sum']}).reset_index()
+
+    return df_for_seas, df_for_class, np_str, n_names, np_end

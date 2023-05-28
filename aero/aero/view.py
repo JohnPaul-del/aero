@@ -11,7 +11,7 @@ from sklearn import preprocessing as pre
 import numpy as np
 
 from .forms import TaskForm
-from .functionst import show_graph_task1, show_graph_task2, show_graph_task3
+from .functionst import show_graph_task1, show_graph_task2, show_graph_task3, show_graph_task4
 
 
 def form_view(request):
@@ -116,6 +116,34 @@ def generate_plot(request):
             x = df[(df['profile'] == n_names[idx])]['SDAT_S']
             y = df[(df['profile'] == n_names[idx])]['PASS_BK']
             plt.plot(x, y, label=f'Class: {n_names[idx]}')
+
+        plt.legend()
+        buffer = BytesIO()
+        plt.savefig(buffer, format='png')
+        buffer.seek(0)
+
+        graph_data = base64.b64encode(buffer.getvalue()).decode('utf-8')
+
+    elif tasks == 'task_4':
+
+        df_seas, df_class, np_str, n_names, np_end = show_graph_task4(
+            dep_airports[0].upper(),
+            arr_airports[0].upper(),
+        )
+
+        for idx in range(len(n_names)):
+            x = df_seas[(df_seas['seas'] == n_names[idx]) &
+                        (df_seas['DD'].isin(pd.date_range(np_str[idx], np_end[idx])))]['DD']
+            plt.bar(x, df_seas[(df_seas['seas'] == n_names[idx]) &
+                               (df_seas['DD'].isin(pd.date_range(np_str[idx], np_end[idx])))]['Y_PRED_MODELMLG'].sum(),
+                    label=f'Predict {n_names[idx]}'
+                    )
+
+        for cl in classes:
+            x = df_class[(df_class['SEG_CLASS_CODE'] == cl)]['DD']
+            y = df_class[(df_class['SEG_CLASS_CODE'] == cl)]['Y_PRED_MODELMLG']
+            y = savgol_filter(y, 60, 1, mode='wrap')
+            plt.plot(x. y, label=f'Class (predict) {cl}')
 
         plt.legend()
         buffer = BytesIO()
