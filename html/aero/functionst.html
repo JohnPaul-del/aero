@@ -1,0 +1,1110 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+<meta name="generator" content="pdoc 0.10.0" />
+<title>aero.functionst API documentation</title>
+<meta name="description" content="" />
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/sanitize.min.css" integrity="sha256-PK9q560IAAa6WVRRh76LtCaI8pjTJ2z11v0miyNNjrs=" crossorigin>
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/typography.min.css" integrity="sha256-7l/o7C8jubJiy74VsKTidCy1yBkRtiUGbVkYBylBqUg=" crossorigin>
+<link rel="stylesheet preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/github.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:30px;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:1em 0 .50em 0}h3{font-size:1.4em;margin:25px 0 10px 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .3s ease-in-out}a:hover{color:#e82}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900}pre code{background:#f8f8f8;font-size:.8em;line-height:1.4em}code{background:#f2f2f1;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{background:#f8f8f8;border:0;border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0;padding:1ex}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-weight:bold;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em .5em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.item .name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul{padding-left:1.5em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js" integrity="sha256-Uv3H6lx7dJmRfRvH8TH6kJD1TSK1aFcwgx+mdg3epi8=" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => hljs.initHighlighting())</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>aero.functionst</code></h1>
+</header>
+<section id="section-intro">
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">import datetime
+import os
+import pickle
+
+import numpy as np
+import pandas as pd
+from sklearn.preprocessing import LabelEncoder
+
+
+def get_dataset(start_date, end_date, path=&#39;aero/datasets/&#39;):
+    &#34;&#34;&#34;
+    this is a preparation for the future dataset loading function
+    :param path: path to files
+    :param start_date: star date
+    :param end_date: end date
+    :return: Pandas dataframe objet concatenated from several files
+    &#34;&#34;&#34;
+
+    start_year = start_date.year
+    end_year = end_date.year
+
+    start_month = start_date.month
+    end_month = end_date.month
+
+    ds_files = []
+    for year in range(start_year, end_year + 1):
+        if year == end_year:
+            close_month = end_month
+        else:
+            close_month = 12
+        for month in range(start_month, close_month + 1):
+            ds_files.append(os.path.join(path, &#39;CLASS_{:02d}{:04d}.pickle&#39;.format(month, year)))
+        start_month = 1
+
+    df = pd.concat((
+        pd.read_pickle(f) for f in ds_files),
+        ignore_index=False)
+    df[&#39;SDAT_S&#39;] = pd.to_datetime(df[&#39;SDAT_S&#39;], format=&#39;%d.%m.%Y&#39;)
+    df[&#39;DD&#39;] = pd.to_datetime(df[&#39;DD&#39;], format=&#39;%d.%m.%Y&#39;)
+
+    df.sort_values(by=[&#39;SDAT_S&#39;, &#39;DD&#39;], inplace=True)
+    return df
+
+
+def get_properties(dd, n_data_end, names_prop):
+    &#34;&#34;&#34;
+
+    :param dd:
+    :param n_data_end:
+    :param names_prop:
+    :return:
+    &#34;&#34;&#34;
+
+    if isinstance(dd, int):
+        curr_dd = dd
+    else:
+        curr_dd = np.datetime64(dd)
+
+    d_end = n_data_end[
+        np.where(n_data_end &gt;= curr_dd)
+    ].min()
+
+    try:
+        name_p = names_prop[
+            np.where(n_data_end == d_end)
+        ][0]
+    except:
+        name_p = &#39;&#39;
+
+    return name_p
+
+
+def show_graph_task1(dep_air,
+                     arr_air,
+                     flights,
+                     begin_date,
+                     end_date, ):
+    &#34;&#34;&#34;
+    Определение динамики бронирований рейса в разрезе классов бронирования по вылетевшим рейсам.
+    :param dep_air: from airport
+    :param arr_air: to airport
+    :param flights: list of number of flights
+    :param begin_date: date of begin
+    :param end_date: date of end
+    :return: pandas DataFrame object
+    &#34;&#34;&#34;
+
+    df = get_dataset(begin_date, end_date)
+    df = df[(df[&#39;FLT_NUM&#39;].isin(flights)) &amp;
+            (df[&#39;DD&#39;].isin(pd.date_range(begin_date, end_date))) &amp;
+            (df[&#39;SDAT_S&#39;].isin(pd.date_range(begin_date, end_date))) &amp;
+            (df[&#39;DTD&#39;] != -1) &amp; (df[&#39;SORG&#39;] == dep_air) &amp; (df[&#39;SDST&#39;] == arr_air)].sort_values(
+        [&#39;DTD&#39;, &#39;SEG_CLASS_CODE&#39;])
+
+    new_df = df.groupby([&#39;SEG_CLASS_CODE&#39;, &#39;SDAT_S&#39;]).agg({&#39;PASS_BK&#39;: [&#39;sum&#39;]}).reset_index()
+    return new_df
+
+
+def show_graph_task2(dep_air,
+                     arr_air,
+                     flights,
+                     classes,
+                     begin_date,
+                     end_date,
+                     seas_path=&#39;aero/datasets/seasonality.csv&#39;):
+    &#34;&#34;&#34;
+    Определение сезонности спроса по классам бронирования, по вылетевшим рейсам.
+    :param seas_path: File of seasonality
+    :param dep_air: from airport
+    :param arr_air: to airport
+    :param flights: list of numbers of flights
+    :param classes: list of passengers` classes
+    :param begin_date: begin date
+    :param end_date: end date
+    :return: Three pandas dataframe objects, Numpy arrays of starting date, ending date and list of class names
+    &#34;&#34;&#34;
+
+    df = get_dataset(begin_date, end_date)
+    df = df[(df[&#39;FLT_NUM&#39;].isin(flights)) &amp;
+            (df[&#39;DD&#39;].isin(pd.date_range(begin_date, end_date))) &amp;
+            (df[&#39;SEG_CLASS_CODE&#39;].isin(classes)) &amp; (df[&#39;DTD&#39;] != -1) &amp; (df[&#39;SORG&#39;] == dep_air) &amp;
+            (df[&#39;SDST&#39;] == arr_air)].sort_values([&#39;DTD&#39;, &#39;SEG_CLASS_CODE&#39;])
+
+    df_ses = pd.read_csv(seas_path)
+    df_ses[&#39;DAT_BEGIN&#39;] = pd.to_datetime(df_ses[&#39;DAT_BEGIN&#39;], format=&#39;%d.%m.%Y&#39;)
+    df_ses[&#39;DAT_END&#39;] = pd.to_datetime(df_ses[&#39;DAT_END&#39;], format=&#39;%d.%m.%Y&#39;)
+    df_ses = df_ses[(df_ses[&#39;AEROPORT&#39;].isin([dep_air, arr_air]))]
+
+    np_str = df_ses[&#39;DAT_BEGIN&#39;].to_numpy()
+    np_end = df_ses[&#39;DAT_END&#39;].to_numpy()
+    n_names = df_ses[&#39;NAME_S&#39;].to_numpy()
+
+    df[&#39;seas&#39;] = df[&#39;DD&#39;].apply(func=get_properties, args=(np_end, n_names))
+
+    df_seas = df.groupby([&#39;DD&#39;, &#39;seas&#39;]).agg({&#39;PASS_BK&#39;: [&#39;sum&#39;]}).reset_index()
+    df_class = df.groupby([&#39;DD&#39;, &#39;SEG_CLASS_CODE&#39;]).agg({&#39;PASS_BK&#39;: [&#39;sum&#39;]}).reset_index()
+
+    return df, df_seas, df_class, np_str, np_end, n_names
+
+
+def show_graph_task3(dep_air,
+                     arr_air,
+                     classes,
+                     begin_date,
+                     end_date,
+                     profiles_path=&#39;aero/datasets/profiles.csv&#39;):
+    &#34;&#34;&#34;
+    Определение профилей спроса в разрезе классов бронирования, по вылетевшим рейсам.
+    :param profiles_path: file of profiles
+    :param dep_air: from airport
+    :param arr_air: to airport
+    :param classes: list of classes
+    :param begin_date: begin date
+    :param end_date: end data
+    :return: pandas DataFrame object, list of names of profiles
+    &#34;&#34;&#34;
+
+    df = get_dataset(begin_date, end_date)
+    df = df[(df[&#39;SDAT_S&#39;].isin(pd.date_range(begin_date, end_date))) &amp;
+            (df[&#39;DTD&#39;] != -1) &amp;
+            (df[&#39;SEG_CLASS_CODE&#39;].isin(classes)) &amp;
+            (df[&#39;SORG&#39;] == dep_air) &amp;
+            (df[&#39;SDST&#39;] == arr_air)
+            ].sort_values([&#39;DTD&#39;, &#39;SEG_CLASS_CODE&#39;])
+
+    df_pfl = pd.read_csv(profiles_path, sep=&#39;,&#39;)
+    n_max_interval = df_pfl[&#39;MAX_P&#39;].to_numpy()
+    n_names = df_pfl[&#39;NAME_P&#39;].to_numpy()
+
+    df[&#39;profile&#39;] = df[&#39;DTD&#39;].apply(func=get_properties,
+                                    args=(n_max_interval, n_names))
+
+    df_pf = df.groupby(
+        [&#39;SDAT_S&#39;, &#39;profile&#39;]
+    ).agg({&#39;PASS_BK&#39;: [&#39;sum&#39;]}).reset_index()
+
+    return df_pf, n_names
+
+
+def get_schedule_df(path_df=&#39;aero/datasets/&#39;):
+    &#34;&#34;&#34;
+    функция загружает датасет по расписанию.
+    :return: датафрейм с расписанием
+    &#34;&#34;&#34;
+    df_rasp = pd.read_csv(path_df, index_col=0)
+
+    df_rasp[&#39;DD&#39;] = pd.to_datetime(df_rasp[&#39;DD&#39;], format=&#39;%Y%m%d&#39;).dt.strftime(&#39;%d.%m.%Y&#39;)
+    df_rasp[&#39;DD&#39;] = pd.to_datetime(df_rasp[&#39;DD&#39;], format=&#39;%d.%m.%Y&#39;)
+    # df_rasp[&#39;EFFV_DATE&#39;] = pd.to_datetime(df_rasp[&#39;EFFV_DATE&#39;], format=&#39;%Y%m%d&#39;).dt.strftime(&#39;%d.%m.%Y&#39;)
+    # df_rasp[&#39;DISC_DATE&#39;] = pd.to_datetime(df_rasp[&#39;DISC_DATE&#39;], format=&#39;%Y%m%d&#39;).dt.strftime(&#39;%d.%m.%Y&#39;)
+
+    df_rasp[&#39;DAY_NBR_OF_YEAR&#39;] = df_rasp[&#39;DD&#39;].dt.dayofyear
+
+    return df_rasp
+
+
+def get_history_df(year):
+    &#34;&#34;&#34;
+        функция получения датасета для модели. На вход подается год с историческими данными по которым будем предсказывать
+        данные.
+        может используется для проверки эффективности модели - можно будет сравнить данные по факту и по прогнозу.
+
+
+        :param year: год для определения файлов. По-умолчанию 2019
+        :return: возвращает готовый датафрейм для подачи в модель
+        &#34;&#34;&#34;
+
+    # коментарий для экспертов:
+    # есть уже подготовленный файл, который можно получить по ссылки
+    # для этой схемы достаточно раскомментировать код ниже. файл запакован и не имеет расширение csv (!)
+    # load_zip(&#39;https://drive.google.com/uc?export=download&amp;confirm=no_antivirus&amp;id=1huGfTjF1EhvESdxx10u9eHWQCkWEnDqG&#39;)
+    # dataset_to_model = pd.read_csv(&#39;./datasets/dataset_19_to_model&#39;, index_col=0)
+    # return dataset_to_model
+
+    # Период вылетов для отбора файлов
+    BEGIN_DD = datetime.datetime(year, 1, 1)
+    END_DD = datetime.datetime(year, 12, 31)
+
+    # df = getDataSet_Zad(BEGIN_DD, END_DD)  # получение из csv файлов
+    df = get_pickle_df(BEGIN_DD, END_DD)  # получение из PICKLE файлов
+
+    dataset_to_model = add_to_df(df)
+
+    return dataset_to_model
+
+
+def get_pickle_df(start_data, end_data, path=&#39;aero/datasets&#39;):
+    &#34;&#34;&#34;
+    Данные считывает из piсkle файлов: быстрее чем CSV на 30-50%
+
+    :param start_data:
+    :param end_data:
+    :return: возвращает датафрейм в формате Pandas
+    &#34;&#34;&#34;
+
+    path_pickle = path + &#39;/PICKLE&#39; # путь к папке c файлами CLASS в формате PICKLE
+
+    year_s = start_data.year
+    year_e = end_data.year
+
+    all_files = []
+    month_s = start_data.month
+    month_e = end_data.month
+    for year in range(year_s, year_e + 1):
+        if year == year_e:
+            month_end = month_e
+        else:
+            month_end = 12
+        for month in range(month_s, month_end + 1):
+            all_files.append(os.path.join(path_pickle, &#34;CLASS_{:02d}{:04d}.pickle&#34;.format(month, year)))
+
+        month_s = 1
+
+    pd_list = []
+    for file_p in all_files:
+        with open(file_p, &#39;rb&#39;) as f:
+            pd_list.append(pickle.load(f))
+
+    df = pd.concat(pd_list, ignore_index=True)
+    df.sort_values(by=[&#39;SDAT_S&#39;, &#39;DD&#39;], inplace=True)
+    return df
+
+
+def add_to_df(df):
+    &#34;&#34;&#34;
+    функция добавляет/трафсморфирует данные для модели
+    :param df: входящий датафрейм
+    :return: насыщенный и изменный датафрейм для модели
+    &#34;&#34;&#34;
+    # Сгенерируем признак дней недели (0-понедельник, 1-вторник, 2-среда и т.д)
+    df[&#39;WEEK_DAY&#39;] = df[&#39;DD&#39;].dt.weekday
+
+    # Сгенерируем признак недели года (1-ая, 2-ая, 3-я и т.д.)
+    df[&#39;WEEK&#39;] = df[&#39;DD&#39;].dt.week
+
+    # Сгенерируем признак порядкового номера дня в году от 1 до 365(366)
+    df[&#39;DAY_NBR_YEAR&#39;] = df[&#39;DD&#39;].dt.dayofyear
+
+    # Создание признака маршрут
+    df[&#39;ROUTE&#39;] = df[&#39;SORG&#39;] + &#39;-&#39; + df[&#39;SDST&#39;]
+
+    # Признак дня недели выходной или рабочий
+    df[&#39;WKND&#39;] = df.WEEK_DAY.apply(lambda x: x &lt; 5).astype(float)
+
+    # Коэффициент забронированных к доступным местам
+    df[&#39;DIV_PASS_BK_AU&#39;] = round(df[&#39;PASS_BK&#39;] / (df[&#39;AU&#39;] + 1e-3))
+
+    # Показатель доступности класса
+    df[&#39;MULT_PASS_BK_FCLCLD&#39;] = df[&#39;PASS_BK&#39;] * df[&#39;FCLCLD&#39;]
+
+    # Показатель относительной неявки на рейс
+    df[&#39;DIV_NS_PASS_DEP&#39;] = round(df[&#39;NS&#39;] / (df[&#39;PASS_DEP&#39;] + 1e-3))
+
+    # Относительный показатель забронированных к вылетевшим
+    df[&#39;DIV_PASS_BK_DEP&#39;] = round(df[&#39;PASS_BK&#39;] / (df[&#39;PASS_DEP&#39;] + 1e-3))
+
+    # Посмотрим на уникальные значения
+    df[&#39;PASS_BK&#39;].unique(), df[&#39;PASS_BK&#39;].nunique()
+
+    df[&#39;SEG_CLASS_CODE&#39;].unique(), df[&#39;SEG_CLASS_CODE&#39;].nunique()
+
+    df[&#39;FLT_NUM&#39;].unique(), df[&#39;FLT_NUM&#39;].nunique()
+
+    # Словари для классификации/категоризации признаков
+    # Для классов бронирования
+    rbd_map = {rbd: i for i, rbd in enumerate(df[&#39;SEG_CLASS_CODE&#39;].unique())}
+
+    # Отразим значения в столбце &#39;class_station&#39;
+    df[&#39;RBD_CAT&#39;] = df[&#39;SEG_CLASS_CODE&#39;].map(rbd_map)
+
+    # Отразим значения в столбце &#39;class_station&#39;
+    df[&#39;RBD_CAT&#39;] = df[&#39;SEG_CLASS_CODE&#39;].map(rbd_map)
+
+    # Отразим значения в столбце &#39;class_station&#39;
+    df[&#39;RBD_CAT&#39;] = df[&#39;SEG_CLASS_CODE&#39;].map(rbd_map)
+
+    # Перевод в категории столбец датафрейма &#39;ROUTE&#39;
+    le = LabelEncoder()
+    df[&#39;ROUTE_CAT&#39;] = le.fit_transform(df[&#39;ROUTE&#39;])
+
+    # Перевод в категории столбец датафрейма &#39;SSCL1&#39;,   &#39;SEG_CLASS_CODE&#39;
+    df[&#39;SSCL1_CAT&#39;] = le.fit_transform(df[&#39;SSCL1&#39;])
+    df[&#39;SEG_CLASS_CODE_CAT&#39;] = le.fit_transform(df[&#39;SEG_CLASS_CODE&#39;])
+
+    # Удаляем лишние колонки в датафрейме
+    df.drop([&#39;SDAT_S&#39;, &#39;DD&#39;, &#39;SAK&#39;, &#39;NBCL&#39;, &#39;SORG&#39;, &#39;SDST&#39;, &#39;SSCL1&#39;, &#39;SEG_CLASS_CODE&#39;, &#39;ROUTE&#39;], axis=1, inplace=True)
+    df.head(3)
+
+    return df
+
+
+def get_data_set_for_predict(df_history, rasp):
+    &#34;&#34;&#34;
+    функция подготавливает датасет для модели для предсказания. Ключевые показатели заполняются из исторических данных.
+    за какой период будут исторические данные - на такой период будет сделано предсказания.
+    например, если нужно предсказать на 2020 год, то в качестве исторических данным нужно подать
+    данные за 2019 год или 2018 год
+    :param df_history: исторические данные для формирования прогноза.
+    :param rasp: раписание вылетов
+    :return: датафрейм для подачи в модель для предсказания
+    &#34;&#34;&#34;
+
+    # print(rasp.FLT_NUMSH.nunique(), df_history.FLT_NUM.nunique())  # к-во уникальных рейсов в расписании и в историческом датасете
+
+    # нужно проверить года на високосность: 2020 год - високосный = 366 дней (!)
+    days_year_pred = rasp.DAY_NBR_YEAR.nunique() # к-во дней по годам в данных
+    days_year_hist = df_history.DAY_NBR_YEAR.nunique()  # к-во дней по годам в данных
+
+    need_add_day = True if days_year_pred&gt;days_year_hist else False
+
+    # Создание колонки день года в соответствии с форматом данных для ML (от 0 до 365(366))
+    # Сгенерируем признак порядкового номера дня в году
+    rasp[&#39;DAY_NBR_OF_YEAR&#39;] = rasp[&#39;DD&#39;].dt.dayofyear
+
+    # Создание новой таблицы с пустым датафреймом
+    dataset_predict_to_model = pd.DataFrame(columns=df_history.columns)
+
+    # Получение уникальных значений FLT_NUMSH и DAY_NBR_YEAR из таблицы rasp
+    flt_numsh_values = rasp[&#39;FLT_NUMSH&#39;].unique()
+    effv_date_yday_values = rasp[&#39;DAY_NBR_YEAR&#39;].unique()
+
+    # Фильтрация таблицы df_history по условию совпадения значений FLT_NUM и DAY_NBR_YEAR
+    filtered_dataset = df_history[
+        (df_history[&#39;FLT_NUM&#39;].isin(flt_numsh_values)) &amp;
+        (df_history[&#39;DAY_NBR_YEAR&#39;].isin(effv_date_yday_values))
+        ]
+
+    # Словарь для изменения типа данных в dataset_predict_to_model
+    data_types = {
+        &#39;FLT_NUM&#39;: int,
+        &#39;SEG_NUM&#39;: int,
+        &#39;FCLCLD&#39;: int,
+        &#39;PASS_BK&#39;: int,
+        &#39;SA&#39;: int,
+        &#39;AU&#39;: int,
+        &#39;PASS_DEP&#39;: int,
+        &#39;NS&#39;: int,
+        &#39;DTD&#39;: int,
+        &#39;WEEK_DAY&#39;: int,
+        &#39;WEEK&#39;: int,
+        &#39;DAY_NBR_YEAR&#39;: int,
+        &#39;WKND&#39;: int,
+        &#39;DIV_PASS_BK_AU&#39;: float,
+        &#39;MULT_PASS_BK_FCLCLD&#39;: float,
+        &#39;DIV_NS_PASS_DEP&#39;: float,
+        &#39;DIV_PASS_BK_DEP&#39;: float,
+        &#39;RBD_CAT&#39;: int,
+        # &#39;PASS_BK_CAT&#39;: int,
+        # &#39;FLT_NUM_CAT&#39;: int,
+        &#39;ROUTE_CAT&#39;: int,
+        &#39;SSCL1_CAT&#39;: int,
+        &#39;SEG_CLASS_CODE_CAT&#39;: int
+    }
+
+    # Применение словаря с типами данных к dataset_20_to_model
+    dataset_predict_to_model = dataset_predict_to_model.astype(data_types)
+
+    # Добавление отфильтрованных строк в таблицу dataset_20_to_model
+    dataset_predict_to_model = dataset_predict_to_model.append(filtered_dataset, ignore_index=True)
+
+    # Проверка наличия данных на поледний день года, данных нет
+    if need_add_day:
+        # данный блок не продуман до конца. Пока определяли визуально. Автоматизировать этот процесс не успели
+        # суть: нужно подобрать максимльно близки по праметрам рейс.
+        # dataset_predict_to_model[dataset_predict_to_model[&#39;DAY_NBR_YEAR&#39;] == 366]
+        # # В расписании а  366-й день 2020 года, это 21 рейс
+        # rasp[rasp[&#39;DAY_NBR_OF_YEAR&#39;] == 366].count()
+        # Смотрим какой рейс ближе по параметрам времени вылета, это рейс 1140
+        # rasp[rasp[&#39;DAY_NBR_OF_YEAR&#39;] == 366]
+        # # У нас в исторических данных за 2019 нет информации о 1772 рейсе с вылетом в последний день года.
+        # print(dataset_predict_to_model[dataset_predict_to_model[&#39;FLT_NUM&#39;] == 1772])
+        # # Однако в расписании 2020 года рейс стоит
+        # rasp[rasp[&#39;FLT_NUMSH&#39;] == 1772]
+
+        # пока решили просто скопировать вылет за 365 день в 366 день. Это не лучшее решение, но пока только его смогли реализовать
+        # Соберем 20 рейсов за 365-й день и скопируем их на 366-й
+        rasp_last_day = rasp[rasp[&#39;DAY_NBR_OF_YEAR&#39;] == 366]
+        dataset_last_day = df_history[(df_history[&#39;FLT_NUM&#39;].isin(rasp_last_day[&#39;FLT_NUMSH&#39;])) &amp; (
+                    df_history[&#39;DAY_NBR_YEAR&#39;] == 365)]
+        # Присвоим значение 366 колонке dataset_20_last_day
+        dataset_last_day[&#39;DAY_NBR_YEAR&#39;] = int(366)
+
+        # Соединяем данные за 366-й день с остальными данными
+        merged_dataset = pd.concat([dataset_predict_to_model, dataset_last_day], ignore_index=True)
+
+        # Найти строки с рейсом 1140 и 366 номером дня
+        flight_1140_day_366 = merged_dataset[
+            (merged_dataset[&#39;FLT_NUM&#39;] == 1140) &amp; (merged_dataset[&#39;DAY_NBR_YEAR&#39;] == 366)].copy()
+
+        # Заменить номер рейса на 1772 в скопированных строках
+        flight_1140_day_366[&#39;FLT_NUM&#39;] = 1772
+
+        # Присоединить скопированные строки к merged_dataset
+        dataset_predict_to_model = pd.concat([merged_dataset, flight_1140_day_366], ignore_index=True)
+
+    return dataset_predict_to_model
+
+
+def get_predicted_dataset():
+    &#34;&#34;&#34;
+
+    :return:
+    &#34;&#34;&#34;
+    df_sched = get_schedule_df()
+    df_hist = get_history_df(year=2019)
+
+    df = get_data_set_for_predict(df_hist, df_sched)
+
+    return df</code></pre>
+</details>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-functions">Functions</h2>
+<dl>
+<dt id="aero.functionst.add_to_df"><code class="name flex">
+<span>def <span class="ident">add_to_df</span></span>(<span>df)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>функция добавляет/трафсморфирует данные для модели
+:param df: входящий датафрейм
+:return: насыщенный и изменный датафрейм для модели</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def add_to_df(df):
+    &#34;&#34;&#34;
+    функция добавляет/трафсморфирует данные для модели
+    :param df: входящий датафрейм
+    :return: насыщенный и изменный датафрейм для модели
+    &#34;&#34;&#34;
+    # Сгенерируем признак дней недели (0-понедельник, 1-вторник, 2-среда и т.д)
+    df[&#39;WEEK_DAY&#39;] = df[&#39;DD&#39;].dt.weekday
+
+    # Сгенерируем признак недели года (1-ая, 2-ая, 3-я и т.д.)
+    df[&#39;WEEK&#39;] = df[&#39;DD&#39;].dt.week
+
+    # Сгенерируем признак порядкового номера дня в году от 1 до 365(366)
+    df[&#39;DAY_NBR_YEAR&#39;] = df[&#39;DD&#39;].dt.dayofyear
+
+    # Создание признака маршрут
+    df[&#39;ROUTE&#39;] = df[&#39;SORG&#39;] + &#39;-&#39; + df[&#39;SDST&#39;]
+
+    # Признак дня недели выходной или рабочий
+    df[&#39;WKND&#39;] = df.WEEK_DAY.apply(lambda x: x &lt; 5).astype(float)
+
+    # Коэффициент забронированных к доступным местам
+    df[&#39;DIV_PASS_BK_AU&#39;] = round(df[&#39;PASS_BK&#39;] / (df[&#39;AU&#39;] + 1e-3))
+
+    # Показатель доступности класса
+    df[&#39;MULT_PASS_BK_FCLCLD&#39;] = df[&#39;PASS_BK&#39;] * df[&#39;FCLCLD&#39;]
+
+    # Показатель относительной неявки на рейс
+    df[&#39;DIV_NS_PASS_DEP&#39;] = round(df[&#39;NS&#39;] / (df[&#39;PASS_DEP&#39;] + 1e-3))
+
+    # Относительный показатель забронированных к вылетевшим
+    df[&#39;DIV_PASS_BK_DEP&#39;] = round(df[&#39;PASS_BK&#39;] / (df[&#39;PASS_DEP&#39;] + 1e-3))
+
+    # Посмотрим на уникальные значения
+    df[&#39;PASS_BK&#39;].unique(), df[&#39;PASS_BK&#39;].nunique()
+
+    df[&#39;SEG_CLASS_CODE&#39;].unique(), df[&#39;SEG_CLASS_CODE&#39;].nunique()
+
+    df[&#39;FLT_NUM&#39;].unique(), df[&#39;FLT_NUM&#39;].nunique()
+
+    # Словари для классификации/категоризации признаков
+    # Для классов бронирования
+    rbd_map = {rbd: i for i, rbd in enumerate(df[&#39;SEG_CLASS_CODE&#39;].unique())}
+
+    # Отразим значения в столбце &#39;class_station&#39;
+    df[&#39;RBD_CAT&#39;] = df[&#39;SEG_CLASS_CODE&#39;].map(rbd_map)
+
+    # Отразим значения в столбце &#39;class_station&#39;
+    df[&#39;RBD_CAT&#39;] = df[&#39;SEG_CLASS_CODE&#39;].map(rbd_map)
+
+    # Отразим значения в столбце &#39;class_station&#39;
+    df[&#39;RBD_CAT&#39;] = df[&#39;SEG_CLASS_CODE&#39;].map(rbd_map)
+
+    # Перевод в категории столбец датафрейма &#39;ROUTE&#39;
+    le = LabelEncoder()
+    df[&#39;ROUTE_CAT&#39;] = le.fit_transform(df[&#39;ROUTE&#39;])
+
+    # Перевод в категории столбец датафрейма &#39;SSCL1&#39;,   &#39;SEG_CLASS_CODE&#39;
+    df[&#39;SSCL1_CAT&#39;] = le.fit_transform(df[&#39;SSCL1&#39;])
+    df[&#39;SEG_CLASS_CODE_CAT&#39;] = le.fit_transform(df[&#39;SEG_CLASS_CODE&#39;])
+
+    # Удаляем лишние колонки в датафрейме
+    df.drop([&#39;SDAT_S&#39;, &#39;DD&#39;, &#39;SAK&#39;, &#39;NBCL&#39;, &#39;SORG&#39;, &#39;SDST&#39;, &#39;SSCL1&#39;, &#39;SEG_CLASS_CODE&#39;, &#39;ROUTE&#39;], axis=1, inplace=True)
+    df.head(3)
+
+    return df</code></pre>
+</details>
+</dd>
+<dt id="aero.functionst.get_data_set_for_predict"><code class="name flex">
+<span>def <span class="ident">get_data_set_for_predict</span></span>(<span>df_history, rasp)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>функция подготавливает датасет для модели для предсказания. Ключевые показатели заполняются из исторических данных.
+за какой период будут исторические данные - на такой период будет сделано предсказания.
+например, если нужно предсказать на 2020 год, то в качестве исторических данным нужно подать
+данные за 2019 год или 2018 год
+:param df_history: исторические данные для формирования прогноза.
+:param rasp: раписание вылетов
+:return: датафрейм для подачи в модель для предсказания</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def get_data_set_for_predict(df_history, rasp):
+    &#34;&#34;&#34;
+    функция подготавливает датасет для модели для предсказания. Ключевые показатели заполняются из исторических данных.
+    за какой период будут исторические данные - на такой период будет сделано предсказания.
+    например, если нужно предсказать на 2020 год, то в качестве исторических данным нужно подать
+    данные за 2019 год или 2018 год
+    :param df_history: исторические данные для формирования прогноза.
+    :param rasp: раписание вылетов
+    :return: датафрейм для подачи в модель для предсказания
+    &#34;&#34;&#34;
+
+    # print(rasp.FLT_NUMSH.nunique(), df_history.FLT_NUM.nunique())  # к-во уникальных рейсов в расписании и в историческом датасете
+
+    # нужно проверить года на високосность: 2020 год - високосный = 366 дней (!)
+    days_year_pred = rasp.DAY_NBR_YEAR.nunique() # к-во дней по годам в данных
+    days_year_hist = df_history.DAY_NBR_YEAR.nunique()  # к-во дней по годам в данных
+
+    need_add_day = True if days_year_pred&gt;days_year_hist else False
+
+    # Создание колонки день года в соответствии с форматом данных для ML (от 0 до 365(366))
+    # Сгенерируем признак порядкового номера дня в году
+    rasp[&#39;DAY_NBR_OF_YEAR&#39;] = rasp[&#39;DD&#39;].dt.dayofyear
+
+    # Создание новой таблицы с пустым датафреймом
+    dataset_predict_to_model = pd.DataFrame(columns=df_history.columns)
+
+    # Получение уникальных значений FLT_NUMSH и DAY_NBR_YEAR из таблицы rasp
+    flt_numsh_values = rasp[&#39;FLT_NUMSH&#39;].unique()
+    effv_date_yday_values = rasp[&#39;DAY_NBR_YEAR&#39;].unique()
+
+    # Фильтрация таблицы df_history по условию совпадения значений FLT_NUM и DAY_NBR_YEAR
+    filtered_dataset = df_history[
+        (df_history[&#39;FLT_NUM&#39;].isin(flt_numsh_values)) &amp;
+        (df_history[&#39;DAY_NBR_YEAR&#39;].isin(effv_date_yday_values))
+        ]
+
+    # Словарь для изменения типа данных в dataset_predict_to_model
+    data_types = {
+        &#39;FLT_NUM&#39;: int,
+        &#39;SEG_NUM&#39;: int,
+        &#39;FCLCLD&#39;: int,
+        &#39;PASS_BK&#39;: int,
+        &#39;SA&#39;: int,
+        &#39;AU&#39;: int,
+        &#39;PASS_DEP&#39;: int,
+        &#39;NS&#39;: int,
+        &#39;DTD&#39;: int,
+        &#39;WEEK_DAY&#39;: int,
+        &#39;WEEK&#39;: int,
+        &#39;DAY_NBR_YEAR&#39;: int,
+        &#39;WKND&#39;: int,
+        &#39;DIV_PASS_BK_AU&#39;: float,
+        &#39;MULT_PASS_BK_FCLCLD&#39;: float,
+        &#39;DIV_NS_PASS_DEP&#39;: float,
+        &#39;DIV_PASS_BK_DEP&#39;: float,
+        &#39;RBD_CAT&#39;: int,
+        # &#39;PASS_BK_CAT&#39;: int,
+        # &#39;FLT_NUM_CAT&#39;: int,
+        &#39;ROUTE_CAT&#39;: int,
+        &#39;SSCL1_CAT&#39;: int,
+        &#39;SEG_CLASS_CODE_CAT&#39;: int
+    }
+
+    # Применение словаря с типами данных к dataset_20_to_model
+    dataset_predict_to_model = dataset_predict_to_model.astype(data_types)
+
+    # Добавление отфильтрованных строк в таблицу dataset_20_to_model
+    dataset_predict_to_model = dataset_predict_to_model.append(filtered_dataset, ignore_index=True)
+
+    # Проверка наличия данных на поледний день года, данных нет
+    if need_add_day:
+        # данный блок не продуман до конца. Пока определяли визуально. Автоматизировать этот процесс не успели
+        # суть: нужно подобрать максимльно близки по праметрам рейс.
+        # dataset_predict_to_model[dataset_predict_to_model[&#39;DAY_NBR_YEAR&#39;] == 366]
+        # # В расписании а  366-й день 2020 года, это 21 рейс
+        # rasp[rasp[&#39;DAY_NBR_OF_YEAR&#39;] == 366].count()
+        # Смотрим какой рейс ближе по параметрам времени вылета, это рейс 1140
+        # rasp[rasp[&#39;DAY_NBR_OF_YEAR&#39;] == 366]
+        # # У нас в исторических данных за 2019 нет информации о 1772 рейсе с вылетом в последний день года.
+        # print(dataset_predict_to_model[dataset_predict_to_model[&#39;FLT_NUM&#39;] == 1772])
+        # # Однако в расписании 2020 года рейс стоит
+        # rasp[rasp[&#39;FLT_NUMSH&#39;] == 1772]
+
+        # пока решили просто скопировать вылет за 365 день в 366 день. Это не лучшее решение, но пока только его смогли реализовать
+        # Соберем 20 рейсов за 365-й день и скопируем их на 366-й
+        rasp_last_day = rasp[rasp[&#39;DAY_NBR_OF_YEAR&#39;] == 366]
+        dataset_last_day = df_history[(df_history[&#39;FLT_NUM&#39;].isin(rasp_last_day[&#39;FLT_NUMSH&#39;])) &amp; (
+                    df_history[&#39;DAY_NBR_YEAR&#39;] == 365)]
+        # Присвоим значение 366 колонке dataset_20_last_day
+        dataset_last_day[&#39;DAY_NBR_YEAR&#39;] = int(366)
+
+        # Соединяем данные за 366-й день с остальными данными
+        merged_dataset = pd.concat([dataset_predict_to_model, dataset_last_day], ignore_index=True)
+
+        # Найти строки с рейсом 1140 и 366 номером дня
+        flight_1140_day_366 = merged_dataset[
+            (merged_dataset[&#39;FLT_NUM&#39;] == 1140) &amp; (merged_dataset[&#39;DAY_NBR_YEAR&#39;] == 366)].copy()
+
+        # Заменить номер рейса на 1772 в скопированных строках
+        flight_1140_day_366[&#39;FLT_NUM&#39;] = 1772
+
+        # Присоединить скопированные строки к merged_dataset
+        dataset_predict_to_model = pd.concat([merged_dataset, flight_1140_day_366], ignore_index=True)
+
+    return dataset_predict_to_model</code></pre>
+</details>
+</dd>
+<dt id="aero.functionst.get_dataset"><code class="name flex">
+<span>def <span class="ident">get_dataset</span></span>(<span>start_date, end_date, path='aero/datasets/')</span>
+</code></dt>
+<dd>
+<div class="desc"><p>this is a preparation for the future dataset loading function
+:param path: path to files
+:param start_date: star date
+:param end_date: end date
+:return: Pandas dataframe objet concatenated from several files</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def get_dataset(start_date, end_date, path=&#39;aero/datasets/&#39;):
+    &#34;&#34;&#34;
+    this is a preparation for the future dataset loading function
+    :param path: path to files
+    :param start_date: star date
+    :param end_date: end date
+    :return: Pandas dataframe objet concatenated from several files
+    &#34;&#34;&#34;
+
+    start_year = start_date.year
+    end_year = end_date.year
+
+    start_month = start_date.month
+    end_month = end_date.month
+
+    ds_files = []
+    for year in range(start_year, end_year + 1):
+        if year == end_year:
+            close_month = end_month
+        else:
+            close_month = 12
+        for month in range(start_month, close_month + 1):
+            ds_files.append(os.path.join(path, &#39;CLASS_{:02d}{:04d}.pickle&#39;.format(month, year)))
+        start_month = 1
+
+    df = pd.concat((
+        pd.read_pickle(f) for f in ds_files),
+        ignore_index=False)
+    df[&#39;SDAT_S&#39;] = pd.to_datetime(df[&#39;SDAT_S&#39;], format=&#39;%d.%m.%Y&#39;)
+    df[&#39;DD&#39;] = pd.to_datetime(df[&#39;DD&#39;], format=&#39;%d.%m.%Y&#39;)
+
+    df.sort_values(by=[&#39;SDAT_S&#39;, &#39;DD&#39;], inplace=True)
+    return df</code></pre>
+</details>
+</dd>
+<dt id="aero.functionst.get_history_df"><code class="name flex">
+<span>def <span class="ident">get_history_df</span></span>(<span>year)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>функция получения датасета для модели. На вход подается год с историческими данными по которым будем предсказывать
+данные.
+может используется для проверки эффективности модели - можно будет сравнить данные по факту и по прогнозу.</p>
+<p>:param year: год для определения файлов. По-умолчанию 2019
+:return: возвращает готовый датафрейм для подачи в модель</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def get_history_df(year):
+    &#34;&#34;&#34;
+        функция получения датасета для модели. На вход подается год с историческими данными по которым будем предсказывать
+        данные.
+        может используется для проверки эффективности модели - можно будет сравнить данные по факту и по прогнозу.
+
+
+        :param year: год для определения файлов. По-умолчанию 2019
+        :return: возвращает готовый датафрейм для подачи в модель
+        &#34;&#34;&#34;
+
+    # коментарий для экспертов:
+    # есть уже подготовленный файл, который можно получить по ссылки
+    # для этой схемы достаточно раскомментировать код ниже. файл запакован и не имеет расширение csv (!)
+    # load_zip(&#39;https://drive.google.com/uc?export=download&amp;confirm=no_antivirus&amp;id=1huGfTjF1EhvESdxx10u9eHWQCkWEnDqG&#39;)
+    # dataset_to_model = pd.read_csv(&#39;./datasets/dataset_19_to_model&#39;, index_col=0)
+    # return dataset_to_model
+
+    # Период вылетов для отбора файлов
+    BEGIN_DD = datetime.datetime(year, 1, 1)
+    END_DD = datetime.datetime(year, 12, 31)
+
+    # df = getDataSet_Zad(BEGIN_DD, END_DD)  # получение из csv файлов
+    df = get_pickle_df(BEGIN_DD, END_DD)  # получение из PICKLE файлов
+
+    dataset_to_model = add_to_df(df)
+
+    return dataset_to_model</code></pre>
+</details>
+</dd>
+<dt id="aero.functionst.get_pickle_df"><code class="name flex">
+<span>def <span class="ident">get_pickle_df</span></span>(<span>start_data, end_data, path='aero/datasets')</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Данные считывает из piсkle файлов: быстрее чем CSV на 30-50%</p>
+<p>:param start_data:
+:param end_data:
+:return: возвращает датафрейм в формате Pandas</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def get_pickle_df(start_data, end_data, path=&#39;aero/datasets&#39;):
+    &#34;&#34;&#34;
+    Данные считывает из piсkle файлов: быстрее чем CSV на 30-50%
+
+    :param start_data:
+    :param end_data:
+    :return: возвращает датафрейм в формате Pandas
+    &#34;&#34;&#34;
+
+    path_pickle = path + &#39;/PICKLE&#39; # путь к папке c файлами CLASS в формате PICKLE
+
+    year_s = start_data.year
+    year_e = end_data.year
+
+    all_files = []
+    month_s = start_data.month
+    month_e = end_data.month
+    for year in range(year_s, year_e + 1):
+        if year == year_e:
+            month_end = month_e
+        else:
+            month_end = 12
+        for month in range(month_s, month_end + 1):
+            all_files.append(os.path.join(path_pickle, &#34;CLASS_{:02d}{:04d}.pickle&#34;.format(month, year)))
+
+        month_s = 1
+
+    pd_list = []
+    for file_p in all_files:
+        with open(file_p, &#39;rb&#39;) as f:
+            pd_list.append(pickle.load(f))
+
+    df = pd.concat(pd_list, ignore_index=True)
+    df.sort_values(by=[&#39;SDAT_S&#39;, &#39;DD&#39;], inplace=True)
+    return df</code></pre>
+</details>
+</dd>
+<dt id="aero.functionst.get_predicted_dataset"><code class="name flex">
+<span>def <span class="ident">get_predicted_dataset</span></span>(<span>)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>:return:</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def get_predicted_dataset():
+    &#34;&#34;&#34;
+
+    :return:
+    &#34;&#34;&#34;
+    df_sched = get_schedule_df()
+    df_hist = get_history_df(year=2019)
+
+    df = get_data_set_for_predict(df_hist, df_sched)
+
+    return df</code></pre>
+</details>
+</dd>
+<dt id="aero.functionst.get_properties"><code class="name flex">
+<span>def <span class="ident">get_properties</span></span>(<span>dd, n_data_end, names_prop)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>:param dd:
+:param n_data_end:
+:param names_prop:
+:return:</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def get_properties(dd, n_data_end, names_prop):
+    &#34;&#34;&#34;
+
+    :param dd:
+    :param n_data_end:
+    :param names_prop:
+    :return:
+    &#34;&#34;&#34;
+
+    if isinstance(dd, int):
+        curr_dd = dd
+    else:
+        curr_dd = np.datetime64(dd)
+
+    d_end = n_data_end[
+        np.where(n_data_end &gt;= curr_dd)
+    ].min()
+
+    try:
+        name_p = names_prop[
+            np.where(n_data_end == d_end)
+        ][0]
+    except:
+        name_p = &#39;&#39;
+
+    return name_p</code></pre>
+</details>
+</dd>
+<dt id="aero.functionst.get_schedule_df"><code class="name flex">
+<span>def <span class="ident">get_schedule_df</span></span>(<span>path_df='aero/datasets/')</span>
+</code></dt>
+<dd>
+<div class="desc"><p>функция загружает датасет по расписанию.
+:return: датафрейм с расписанием</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def get_schedule_df(path_df=&#39;aero/datasets/&#39;):
+    &#34;&#34;&#34;
+    функция загружает датасет по расписанию.
+    :return: датафрейм с расписанием
+    &#34;&#34;&#34;
+    df_rasp = pd.read_csv(path_df, index_col=0)
+
+    df_rasp[&#39;DD&#39;] = pd.to_datetime(df_rasp[&#39;DD&#39;], format=&#39;%Y%m%d&#39;).dt.strftime(&#39;%d.%m.%Y&#39;)
+    df_rasp[&#39;DD&#39;] = pd.to_datetime(df_rasp[&#39;DD&#39;], format=&#39;%d.%m.%Y&#39;)
+    # df_rasp[&#39;EFFV_DATE&#39;] = pd.to_datetime(df_rasp[&#39;EFFV_DATE&#39;], format=&#39;%Y%m%d&#39;).dt.strftime(&#39;%d.%m.%Y&#39;)
+    # df_rasp[&#39;DISC_DATE&#39;] = pd.to_datetime(df_rasp[&#39;DISC_DATE&#39;], format=&#39;%Y%m%d&#39;).dt.strftime(&#39;%d.%m.%Y&#39;)
+
+    df_rasp[&#39;DAY_NBR_OF_YEAR&#39;] = df_rasp[&#39;DD&#39;].dt.dayofyear
+
+    return df_rasp</code></pre>
+</details>
+</dd>
+<dt id="aero.functionst.show_graph_task1"><code class="name flex">
+<span>def <span class="ident">show_graph_task1</span></span>(<span>dep_air, arr_air, flights, begin_date, end_date)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Определение динамики бронирований рейса в разрезе классов бронирования по вылетевшим рейсам.
+:param dep_air: from airport
+:param arr_air: to airport
+:param flights: list of number of flights
+:param begin_date: date of begin
+:param end_date: date of end
+:return: pandas DataFrame object</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def show_graph_task1(dep_air,
+                     arr_air,
+                     flights,
+                     begin_date,
+                     end_date, ):
+    &#34;&#34;&#34;
+    Определение динамики бронирований рейса в разрезе классов бронирования по вылетевшим рейсам.
+    :param dep_air: from airport
+    :param arr_air: to airport
+    :param flights: list of number of flights
+    :param begin_date: date of begin
+    :param end_date: date of end
+    :return: pandas DataFrame object
+    &#34;&#34;&#34;
+
+    df = get_dataset(begin_date, end_date)
+    df = df[(df[&#39;FLT_NUM&#39;].isin(flights)) &amp;
+            (df[&#39;DD&#39;].isin(pd.date_range(begin_date, end_date))) &amp;
+            (df[&#39;SDAT_S&#39;].isin(pd.date_range(begin_date, end_date))) &amp;
+            (df[&#39;DTD&#39;] != -1) &amp; (df[&#39;SORG&#39;] == dep_air) &amp; (df[&#39;SDST&#39;] == arr_air)].sort_values(
+        [&#39;DTD&#39;, &#39;SEG_CLASS_CODE&#39;])
+
+    new_df = df.groupby([&#39;SEG_CLASS_CODE&#39;, &#39;SDAT_S&#39;]).agg({&#39;PASS_BK&#39;: [&#39;sum&#39;]}).reset_index()
+    return new_df</code></pre>
+</details>
+</dd>
+<dt id="aero.functionst.show_graph_task2"><code class="name flex">
+<span>def <span class="ident">show_graph_task2</span></span>(<span>dep_air, arr_air, flights, classes, begin_date, end_date, seas_path='aero/datasets/seasonality.csv')</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Определение сезонности спроса по классам бронирования, по вылетевшим рейсам.
+:param seas_path: File of seasonality
+:param dep_air: from airport
+:param arr_air: to airport
+:param flights: list of numbers of flights
+:param classes: list of passengers` classes
+:param begin_date: begin date
+:param end_date: end date
+:return: Three pandas dataframe objects, Numpy arrays of starting date, ending date and list of class names</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def show_graph_task2(dep_air,
+                     arr_air,
+                     flights,
+                     classes,
+                     begin_date,
+                     end_date,
+                     seas_path=&#39;aero/datasets/seasonality.csv&#39;):
+    &#34;&#34;&#34;
+    Определение сезонности спроса по классам бронирования, по вылетевшим рейсам.
+    :param seas_path: File of seasonality
+    :param dep_air: from airport
+    :param arr_air: to airport
+    :param flights: list of numbers of flights
+    :param classes: list of passengers` classes
+    :param begin_date: begin date
+    :param end_date: end date
+    :return: Three pandas dataframe objects, Numpy arrays of starting date, ending date and list of class names
+    &#34;&#34;&#34;
+
+    df = get_dataset(begin_date, end_date)
+    df = df[(df[&#39;FLT_NUM&#39;].isin(flights)) &amp;
+            (df[&#39;DD&#39;].isin(pd.date_range(begin_date, end_date))) &amp;
+            (df[&#39;SEG_CLASS_CODE&#39;].isin(classes)) &amp; (df[&#39;DTD&#39;] != -1) &amp; (df[&#39;SORG&#39;] == dep_air) &amp;
+            (df[&#39;SDST&#39;] == arr_air)].sort_values([&#39;DTD&#39;, &#39;SEG_CLASS_CODE&#39;])
+
+    df_ses = pd.read_csv(seas_path)
+    df_ses[&#39;DAT_BEGIN&#39;] = pd.to_datetime(df_ses[&#39;DAT_BEGIN&#39;], format=&#39;%d.%m.%Y&#39;)
+    df_ses[&#39;DAT_END&#39;] = pd.to_datetime(df_ses[&#39;DAT_END&#39;], format=&#39;%d.%m.%Y&#39;)
+    df_ses = df_ses[(df_ses[&#39;AEROPORT&#39;].isin([dep_air, arr_air]))]
+
+    np_str = df_ses[&#39;DAT_BEGIN&#39;].to_numpy()
+    np_end = df_ses[&#39;DAT_END&#39;].to_numpy()
+    n_names = df_ses[&#39;NAME_S&#39;].to_numpy()
+
+    df[&#39;seas&#39;] = df[&#39;DD&#39;].apply(func=get_properties, args=(np_end, n_names))
+
+    df_seas = df.groupby([&#39;DD&#39;, &#39;seas&#39;]).agg({&#39;PASS_BK&#39;: [&#39;sum&#39;]}).reset_index()
+    df_class = df.groupby([&#39;DD&#39;, &#39;SEG_CLASS_CODE&#39;]).agg({&#39;PASS_BK&#39;: [&#39;sum&#39;]}).reset_index()
+
+    return df, df_seas, df_class, np_str, np_end, n_names</code></pre>
+</details>
+</dd>
+<dt id="aero.functionst.show_graph_task3"><code class="name flex">
+<span>def <span class="ident">show_graph_task3</span></span>(<span>dep_air, arr_air, classes, begin_date, end_date, profiles_path='aero/datasets/profiles.csv')</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Определение профилей спроса в разрезе классов бронирования, по вылетевшим рейсам.
+:param profiles_path: file of profiles
+:param dep_air: from airport
+:param arr_air: to airport
+:param classes: list of classes
+:param begin_date: begin date
+:param end_date: end data
+:return: pandas DataFrame object, list of names of profiles</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def show_graph_task3(dep_air,
+                     arr_air,
+                     classes,
+                     begin_date,
+                     end_date,
+                     profiles_path=&#39;aero/datasets/profiles.csv&#39;):
+    &#34;&#34;&#34;
+    Определение профилей спроса в разрезе классов бронирования, по вылетевшим рейсам.
+    :param profiles_path: file of profiles
+    :param dep_air: from airport
+    :param arr_air: to airport
+    :param classes: list of classes
+    :param begin_date: begin date
+    :param end_date: end data
+    :return: pandas DataFrame object, list of names of profiles
+    &#34;&#34;&#34;
+
+    df = get_dataset(begin_date, end_date)
+    df = df[(df[&#39;SDAT_S&#39;].isin(pd.date_range(begin_date, end_date))) &amp;
+            (df[&#39;DTD&#39;] != -1) &amp;
+            (df[&#39;SEG_CLASS_CODE&#39;].isin(classes)) &amp;
+            (df[&#39;SORG&#39;] == dep_air) &amp;
+            (df[&#39;SDST&#39;] == arr_air)
+            ].sort_values([&#39;DTD&#39;, &#39;SEG_CLASS_CODE&#39;])
+
+    df_pfl = pd.read_csv(profiles_path, sep=&#39;,&#39;)
+    n_max_interval = df_pfl[&#39;MAX_P&#39;].to_numpy()
+    n_names = df_pfl[&#39;NAME_P&#39;].to_numpy()
+
+    df[&#39;profile&#39;] = df[&#39;DTD&#39;].apply(func=get_properties,
+                                    args=(n_max_interval, n_names))
+
+    df_pf = df.groupby(
+        [&#39;SDAT_S&#39;, &#39;profile&#39;]
+    ).agg({&#39;PASS_BK&#39;: [&#39;sum&#39;]}).reset_index()
+
+    return df_pf, n_names</code></pre>
+</details>
+</dd>
+</dl>
+</section>
+<section>
+</section>
+</article>
+<nav id="sidebar">
+<h1>Index</h1>
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3>Super-module</h3>
+<ul>
+<li><code><a title="aero" href="index.html">aero</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-functions">Functions</a></h3>
+<ul class="">
+<li><code><a title="aero.functionst.add_to_df" href="#aero.functionst.add_to_df">add_to_df</a></code></li>
+<li><code><a title="aero.functionst.get_data_set_for_predict" href="#aero.functionst.get_data_set_for_predict">get_data_set_for_predict</a></code></li>
+<li><code><a title="aero.functionst.get_dataset" href="#aero.functionst.get_dataset">get_dataset</a></code></li>
+<li><code><a title="aero.functionst.get_history_df" href="#aero.functionst.get_history_df">get_history_df</a></code></li>
+<li><code><a title="aero.functionst.get_pickle_df" href="#aero.functionst.get_pickle_df">get_pickle_df</a></code></li>
+<li><code><a title="aero.functionst.get_predicted_dataset" href="#aero.functionst.get_predicted_dataset">get_predicted_dataset</a></code></li>
+<li><code><a title="aero.functionst.get_properties" href="#aero.functionst.get_properties">get_properties</a></code></li>
+<li><code><a title="aero.functionst.get_schedule_df" href="#aero.functionst.get_schedule_df">get_schedule_df</a></code></li>
+<li><code><a title="aero.functionst.show_graph_task1" href="#aero.functionst.show_graph_task1">show_graph_task1</a></code></li>
+<li><code><a title="aero.functionst.show_graph_task2" href="#aero.functionst.show_graph_task2">show_graph_task2</a></code></li>
+<li><code><a title="aero.functionst.show_graph_task3" href="#aero.functionst.show_graph_task3">show_graph_task3</a></code></li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc" title="pdoc: Python API documentation generator"><cite>pdoc</cite> 0.10.0</a>.</p>
+</footer>
+</body>
+</html>
